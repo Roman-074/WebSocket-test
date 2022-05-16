@@ -6,7 +6,7 @@
     <data>
         <variable
                 name="ticker"
-                type="websocket.test.presentation.model.Ticker" />
+                type="websocket.test.inapp.Ticker" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

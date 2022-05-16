@@ -1,4 +1,4 @@
-package websocket.test
+package websocket.test.inapp
 
 import android.app.Application
 import com.squareup.moshi.Moshi
@@ -13,13 +13,11 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
-import websocket.test.data.remote.Api
-import websocket.test.data.remote.Client
-import websocket.test.data.remote.ClientImpl
-import websocket.test.data.repository.RepositoryImpl
-import websocket.test.domain.Repository
-import websocket.test.domain.usecase.ObserveTickerUseCase
-import websocket.test.presentation.ui.MainViewModel
+import websocket.test.lib.Client
+import websocket.test.lib.ClientImpl
+import websocket.test.lib.ObserveTickerUseCase
+import websocket.test.lib.Repository
+import websocket.test.lib.RepositoryImpl
 
 // declare a module
 val appModule = module {
@@ -70,10 +68,6 @@ private fun createAndroidLifecycle(application: Application): Lifecycle {
     return AndroidLifecycle.ofApplicationForeground(application)
 }
 
-private val jsonMoshi = Moshi.Builder()
-    .add(KotlinJsonAdapterFactory())
-    .build()
-
 // A Retrofit inspired WebSocket client for Kotlin, Java, and Android, that supports websockets.
 private fun createScarlet(okHttpClient: OkHttpClient, lifecycle: Lifecycle): Api {
     return Scarlet.Builder()
@@ -84,3 +78,7 @@ private fun createScarlet(okHttpClient: OkHttpClient, lifecycle: Lifecycle): Api
         .build()
         .create()
 }
+
+private val jsonMoshi = Moshi.Builder()
+    .add(KotlinJsonAdapterFactory())
+    .build()

@@ -15,11 +15,15 @@ buildscript {
         scarletVersion = '0.1.10'
         moshiVersion = '1.11.0'
         timberVersion = '4.7.1'
+
+        mviVersion = "1.2.6"
+        ribsVersion = "0.32.0"
     }
 
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {

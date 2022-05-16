@@ -1,4 +1,4 @@
-package websocket.test.domain.entities
+package websocket.test.lib
 
 abstract class BaseSubscribe(
     open val event: String,
@@ -11,3 +11,9 @@ abstract class BaseSubscribe(
         const val BTCUSD_PAIR = "BTCUSD"
     }
 }
+
+class SubscribeTicker(
+    override val event: String,
+    override val channel: String,
+    override val pair: String
+) : BaseSubscribe(event, channel, pair)

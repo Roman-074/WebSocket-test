@@ -1,4 +1,4 @@
-package websocket.test.data.entity
+package websocket.test.inapp
 
 import com.squareup.moshi.Json
 

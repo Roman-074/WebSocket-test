@@ -1,11 +1,9 @@
-package websocket.test.data.remote
+package websocket.test.inapp
 
 import com.tinder.scarlet.WebSocket
 import com.tinder.scarlet.ws.Receive
 import com.tinder.scarlet.ws.Send
 import io.reactivex.Flowable
-import websocket.test.data.entity.JsonResponse
-import websocket.test.data.entity.SubscribeTickerRequest
 
 interface Api {
 

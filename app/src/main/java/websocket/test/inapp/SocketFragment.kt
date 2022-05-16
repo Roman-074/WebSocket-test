@@ -1,4 +1,4 @@
-package websocket.test.presentation.ui
+package websocket.test.inapp
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,6 +1,6 @@
-package websocket.test.presentation.model
+package websocket.test.inapp
 
-import websocket.test.domain.model.TickerData
+import websocket.test.lib.TickerData
 
 data class Ticker(
     var dailyChange: String,

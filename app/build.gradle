@@ -4,11 +4,12 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
+
     compileSdkVersion 30
 
     defaultConfig {
         applicationId "websocket.test"
-        minSdkVersion 23
+        minSdkVersion 26
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -22,8 +23,13 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        jvmTarget = "1.8"
     }
 
     dataBinding {
@@ -34,9 +40,6 @@ android {
         enabled = true
     }
 
-    testOptions {
-        unitTests.returnDefaultValues = true
-    }
 }
 
 dependencies {
@@ -68,7 +71,11 @@ dependencies {
     implementation "com.tinder.scarlet:message-adapter-moshi:$scarletVersion"
 
     implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
-
     implementation "com.jakewharton.timber:timber:$timberVersion"
+
+    implementation "com.github.badoo.mvicore:mvicore:$mviVersion"
+    implementation "com.github.badoo.mvicore:binder:$mviVersion"
+    implementation "com.github.badoo.mvicore:mvicore-android:$mviVersion"
+    implementation "com.github.badoo.RIBs:rib-base:$ribsVersion"
 
 }

@@ -1,4 +1,4 @@
-package websocket.test.domain.model
+package websocket.test.lib
 
 data class TickerData(
     val chanId: String,

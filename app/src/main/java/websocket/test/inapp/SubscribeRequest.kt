@@ -1,7 +1,7 @@
-package websocket.test.data.entity
+package websocket.test.inapp
 
 import com.squareup.moshi.Json
-import websocket.test.domain.entities.SubscribeTicker
+import websocket.test.lib.SubscribeTicker
 
 abstract class BaseSubscribeRequest(
     @Json(name = "event")

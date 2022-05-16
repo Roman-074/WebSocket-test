@@ -1,4 +1,4 @@
-package websocket.test.presentation.ui
+package websocket.test.inapp
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,9 +6,7 @@ import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import timber.log.Timber
-import websocket.test.domain.usecase.ObserveTickerUseCase
-import websocket.test.presentation.model.Ticker
-import websocket.test.presentation.model.toTickerModel
+import websocket.test.lib.ObserveTickerUseCase
 
 class MainViewModel(
     val observeTickerUseCase: ObserveTickerUseCase,

@@ -1,9 +1,8 @@
-package websocket.test.presentation
+package websocket.test.inapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import websocket.test.R
-import websocket.test.presentation.ui.SocketFragment
 
 class MainActivity : AppCompatActivity() {
 

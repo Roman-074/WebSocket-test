@@ -1,4 +1,4 @@
-package websocket.test
+package websocket.test.inapp
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
@@ -6,6 +6,7 @@ import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import timber.log.Timber
 import timber.log.Timber.DebugTree
+import websocket.test.BuildConfig
 
 class ClientApplication : Application() {
     override fun onCreate() {
@@ -16,9 +17,9 @@ class ClientApplication : Application() {
         }
 
         startKoin {
+            modules(listOf(appModule))
             androidLogger()
             androidContext(this@ClientApplication)
-            modules(listOf(appModule))
         }
     }
 }

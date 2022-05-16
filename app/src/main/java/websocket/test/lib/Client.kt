@@ -1,11 +1,16 @@
-package websocket.test.data.remote
+package websocket.test.lib
 
 import android.annotation.SuppressLint
 import com.tinder.scarlet.WebSocket
 import io.reactivex.Flowable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
-import websocket.test.data.entity.SubscribeTickerRequest
+import websocket.test.inapp.SubscribeTickerRequest
+import websocket.test.inapp.Api
+
+interface Client {
+    fun subscribeTicker(subscribeTickerRequest: SubscribeTickerRequest): Flowable<Array<String>>
+}
 
 @SuppressLint("CheckResult")
 class ClientImpl(private val api: Api) : Client {
