@@ -24,11 +24,3 @@ fun SubscribeTicker.toSubcribeTickerRequest() =
         channel = channel,
         pair = pair
     )
-
-class SubscribeOrderBookRequest(
-    override val event: String,
-    override val channel: String,
-    override val pair: String,
-    @Json(name = "freq")
-    val frequency: String
-) : BaseSubscribeRequest(event, channel, pair)

@@ -1,7 +1,9 @@
 package websocket.test.lib
 
 import io.reactivex.Flowable
+import websocket.test.inapp.TickerData
 import websocket.test.inapp.toSubcribeTickerRequest
+import websocket.test.inapp.toTickerData
 
 interface Repository {
     fun observeTicker(subscribeTicker: SubscribeTicker): Flowable<TickerData>

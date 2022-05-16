@@ -13,6 +13,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
+import websocket.test.inapp.common.MainViewModel
 import websocket.test.lib.Client
 import websocket.test.lib.ClientImpl
 import websocket.test.lib.ObserveTickerUseCase

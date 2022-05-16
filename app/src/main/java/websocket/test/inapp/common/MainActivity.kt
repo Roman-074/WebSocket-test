@@ -1,4 +1,4 @@
-package websocket.test.inapp
+package websocket.test.inapp.common
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -9,7 +9,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.assertion.ViewAssertions
 
-import websocket.test.inapp.MainActivity
+import websocket.test.inapp.common.MainActivity
 
 /**
  * Instrumented test, which will execute on an Android device.

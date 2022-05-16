@@ -5,8 +5,8 @@ import com.tinder.scarlet.WebSocket
 import io.reactivex.Flowable
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
-import websocket.test.inapp.SubscribeTickerRequest
 import websocket.test.inapp.Api
+import websocket.test.inapp.SubscribeTickerRequest
 
 interface Client {
     fun subscribeTicker(subscribeTickerRequest: SubscribeTickerRequest): Flowable<Array<String>>

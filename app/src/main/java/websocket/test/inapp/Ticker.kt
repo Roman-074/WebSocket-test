@@ -1,7 +1,5 @@
 package websocket.test.inapp
 
-import websocket.test.lib.TickerData
-
 data class Ticker(
     var dailyChange: String,
     var lastPrice: String,

@@ -1,4 +1,4 @@
-package websocket.test.inapp
+package websocket.test.inapp.common
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import timber.log.Timber
+import websocket.test.inapp.Ticker
+import websocket.test.inapp.toTickerModel
 import websocket.test.lib.ObserveTickerUseCase
 
 class MainViewModel(

@@ -1,4 +1,4 @@
-package websocket.test.lib
+package websocket.test.inapp
 
 data class TickerData(
     val chanId: String,
