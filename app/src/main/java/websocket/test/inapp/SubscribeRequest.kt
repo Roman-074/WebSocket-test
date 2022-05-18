@@ -1,7 +1,6 @@
 package websocket.test.inapp
 
 import com.squareup.moshi.Json
-import websocket.test.lib.SubscribeTicker
 
 abstract class BaseSubscribeRequest(
     @Json(name = "event")
@@ -16,11 +15,17 @@ data class SubscribeTickerRequest(
     override val event: String,
     override val channel: String,
     override val pair: String
-) : BaseSubscribeRequest(event, channel, pair)
+) : BaseSubscribeRequest(event, channel, pair) {
+    companion object {
+        const val SUBSCRIBE_EVENT = "subscribe"
+        const val TICKER_CHANNEL = "ticker"
+        const val BTCUSD_PAIR = "BTCUSD"
+    }
+}
 
-fun SubscribeTicker.toSubcribeTickerRequest() =
+fun createTickerRequest() =
     SubscribeTickerRequest(
-        event = event,
-        channel = channel,
-        pair = pair
+        event = SubscribeTickerRequest.SUBSCRIBE_EVENT,
+        channel = SubscribeTickerRequest.TICKER_CHANNEL,
+        pair = SubscribeTickerRequest.BTCUSD_PAIR
     )
