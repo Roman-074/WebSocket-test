@@ -1,4 +1,4 @@
-package websocket.test.lib
+package websocket.test.inapp
 
 abstract class BaseSubscribe(
     open val event: String,
