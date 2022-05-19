@@ -6,12 +6,14 @@ import androidx.lifecycle.ViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import timber.log.Timber
+import websocket.test.inapp.BaseSubscribe
+import websocket.test.inapp.SubscribeTicker
 import websocket.test.inapp.Ticker
 import websocket.test.inapp.toTickerModel
-import websocket.test.lib.ObserveTickerUseCase
+import websocket.test.lib.ISocket
 
 class MainViewModel(
-    val observeTickerUseCase: ObserveTickerUseCase,
+    val socket: ISocket,
 ) : ViewModel() {
 
     // Одноразовый контейнер, который может вмещать несколько других одноразовых айтемов
@@ -24,7 +26,13 @@ class MainViewModel(
 
     init {
         compositeDisposable.add(
-            observeTickerUseCase.invoke()
+            socket.observeTicker(
+                SubscribeTicker(
+                    event = BaseSubscribe.SUBSCRIBE_EVENT,
+                    channel = BaseSubscribe.TICKER_CHANNEL,
+                    pair = BaseSubscribe.BTCUSD_PAIR
+                )
+            )
                 .observeOn(AndroidSchedulers.mainThread())
                 .map { tickerData -> tickerData.toTickerModel() }
                 .subscribe({ ticker ->
